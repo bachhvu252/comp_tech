@@ -1,0 +1,172 @@
+.userlist-card {
+  /* sit flush inside the parent wiki-card (use full width of container), no shadow */
+  width: 100%;
+  margin: 0;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* Use the same system font stack as the login inputs */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.userlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userlist-header h3 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.userlist-section h4 {
+  margin: 8px 0 6px 0;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.userlist-search-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+}
+.userlist-search-icon {
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+}
+.userlist-search-input {
+  width: 100%;
+  padding: 8px 10px 8px 28px;
+  border-radius: 10px;
+  border: 1px solid #bae6fd;
+  background: #f8fafc;
+  font-size: 13px;
+  min-width: 120px;
+  outline: none;
+}
+.userlist-search-input:focus {
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25);
+  background: #ffffff;
+}
+
+.user-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background: #fbfbfc;
+  border-radius: 8px;
+  border: 1px solid #f1f5f9;
+  margin-bottom: 6px;
+}
+
+.user-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar-wrap {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.userlist-card .avatar-img,
+.userlist-card .avatar-pill {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.userlist-card .avatar-img {
+  object-fit: cover;
+  display: block;
+}
+
+.userlist-card .avatar-pill {
+  background: #0ea5e9;
+  color: #fff;
+}
+
+.user-meta .user-name {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+.user-meta .user-username {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.user-columns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 520px; /* wider so long emails can show */
+}
+
+.user-columns .user-email {
+  font-size: 14px;
+  color: #374151;
+  flex: 1 1 auto; /* stretch */
+  min-width: 300px; /* give more room before truncation */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-columns .user-role {
+  flex: 0 0 auto; /* compact */
+  margin-left: 8px;
+}
+
+.userlist-empty {
+  padding: 12px;
+  color: #6b7280;
+}
+
+.userlist-loading { color: #6b7280; }
+
+.userlist-error {
+  color: #6b7280; /* muted: not intrusive */
+  font-size: 13px;
+}
+
+/* reuse role badges from Wiki styles but ensure local specificity */
+.userlist-card .user-role { font-size: 11px; padding: 4px 8px; border-radius: 999px; font-weight: 600; }
+.userlist-card .user-role-admin { border: 1px solid #fecaca; background: #fee2e2; color: #b91c1c; }
+.userlist-card .user-role-editor { border: 1px solid #bfdbfe; background: #dbeafe; color: #1d4ed8; }
+.userlist-card .user-role-viewer { border: 1px solid #e5e7eb; background: #f9fafb; color: #4b5563; }
+
+@media (max-width: 760px) {
+  .user-email { min-width: 120px; }
+  .userlist-card { margin: 12px; padding: 12px; width: calc(100% - 24px); }
+}
+
+.user-columns-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto; /* align to the right like rows */
+  min-width: 520px;
+  padding: 6px 0;
+  color: #6b7280;
+  font-size: 12px;
+}
+.user-columns-header .col-email { flex: 1 1 auto; }
+.user-columns-header .col-role { flex: 0 0 auto; }
